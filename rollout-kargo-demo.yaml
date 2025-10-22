@@ -8,10 +8,12 @@ spec:
     matchLabels:
       app: kargo-demo
   strategy:
-    blueGreen:
-      steps:
-      - setWeight: 20
-      - pause: {}
+    activeService: kargo-demo
+    autoPromotionEnabled: true
+    blueGreen: null
+    steps:
+    - setWeight: 20
+    - pause: {}
   template:
     metadata:
       labels:
