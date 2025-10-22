@@ -25,6 +25,8 @@ spec:
           name: kargo-demo-content
   strategy:
     blueGreen:
-      steps:
+    activeService: kargo-demo
+    autoPromotionEnabled: true
+    steps:
       - setWeight: 20
       - pause: {}
