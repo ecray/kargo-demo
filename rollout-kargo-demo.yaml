@@ -8,9 +8,9 @@ spec:
     matchLabels:
       app: kargo-demo
   strategy:
-    activeService: kargo-demo
-    autoPromotionEnabled: true
-    blueGreen: null
+    blueGreen:
+      activeService: kargo-demo
+      autoPromotionEnabled: true
     steps:
     - setWeight: 20
     - pause: {}
