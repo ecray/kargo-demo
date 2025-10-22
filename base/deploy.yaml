@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: kargo-demo
 spec:
@@ -23,3 +23,8 @@ spec:
       - name: content
         configMap:
           name: kargo-demo-content
+  strategy:
+    blueGreen:
+      steps:
+      - setWeight: 20
+      - pause: {}
